@@ -4,6 +4,7 @@ import TaskList from "./components/TaskList.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header.jsx";
 import TaskDetails from "./components/TaskDetails.jsx";
+import WelcomeMessege from './components/WelcomeMessege.jsx';
 
 function App() {
   const [taskData, setTaskData] = useState([]);
@@ -22,6 +23,7 @@ function App() {
     <>
       <Header />
       <TaskDetails onAddButton={addTodoItem} />
+      {taskData.length === 0 && <WelcomeMessege></WelcomeMessege>}
       <TaskList TaskData={taskData} onDelete={handleDeleteButton}/>
     </>
   );
